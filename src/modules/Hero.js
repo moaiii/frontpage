@@ -5,7 +5,8 @@ import FaChevronDown from 'react-icons/lib/fa/chevron-down';
 class Hero extends Component {
   render() {
 
-    let video_url = require(`../video/hero-video-short.mov`);
+    let video_url_mp4 = require(`../video/hero-video-short.mp4`);
+    let video_url_mov = require(`../video/hero-video-short.mov`);
     let audio_url = require(`../audio/website-audio.mp3`);
 
     return (
@@ -13,7 +14,8 @@ class Hero extends Component {
         <div className="hero-video__container">
           <div className="curtain"></div>
           <video width="auto" height="100%" autoPlay="true" loop>
-            <source src={video_url} type="video/mp4" />
+            <source src={video_url_mp4} type="video/mp4" />
+            <source src={video_url_mov} type="video/mov" />
           </video>
           <audio src={audio_url} autoPlay loop></audio>
         </div>
