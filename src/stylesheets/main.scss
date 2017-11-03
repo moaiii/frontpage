@@ -37,11 +37,11 @@ $gradient-song_4: linear-gradient(to right, #fdfc47, #24fe41);
   }
 }
 
-
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   font-family: $font_3;
 }
 
@@ -63,9 +63,15 @@ p {
 
 .App__header {
   height: $header-height;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .App-intro {
@@ -74,9 +80,16 @@ p {
 
 .App__container {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
   height: 100%;
   background-color: $white;
@@ -97,6 +110,8 @@ p {
 
   &:after {
     content: " ";
+    -webkit-transition: all 3s ease-in;
+    -o-transition: all 3s ease-in;
     transition: all 3s ease-in;
     background-color: $black;
     height: 1px;
@@ -104,11 +119,15 @@ p {
     display: block;
     position: absolute;
     bottom: 3rem;
-    transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+            transform: translateX(50%);
   }
 
   &:before {
     content: " ";
+    -webkit-transition: all 3s ease-in;
+    -o-transition: all 3s ease-in;
     transition: all 3s ease-in;
     background-color: $black;
     height: 1px;
@@ -116,7 +135,9 @@ p {
     display: block;
     position: absolute;
     top: 3rem;
-    transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+            transform: translateX(50%);
   }
 }
 
@@ -130,7 +151,8 @@ p {
 }
 
 .module__hero-image {
-  filter: saturate(1.5) blur(0.5px);
+  -webkit-filter: saturate(1.5) blur(0.5px);
+          filter: saturate(1.5) blur(0.5px);
   border-radius: 2px;
 }
 
@@ -138,9 +160,14 @@ p {
   width: 100%;
 }
 
+@-webkit-keyframes App-logo-spin {
+  from { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
+}
+
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from { -webkit-transform: rotate(0deg); transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); transform: rotate(360deg); }
 }
 
 .footer {
@@ -172,11 +199,15 @@ p {
   background-color: $black;
   height: 100%;
   display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
   -ms-flex-pack: center;
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+          justify-content: flex-end;
   position: fixed;
   width: 100%;
   top: 0;
@@ -187,8 +218,12 @@ p {
 .footer__social {
   width: 30%;
   height: 10% !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-evenly;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   margin: 2rem auto;
   width: 20rem !important;
 
@@ -231,9 +266,14 @@ p {
 .nav__list {
   list-style: none;
   display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100%;
 }
 
@@ -242,11 +282,15 @@ p {
   
   text-decoration: none;
   color: $white;
-  transform: color 0.2s ease;
+  -webkit-transform: color 0.2s ease;
+      -ms-transform: color 0.2s ease;
+          transform: color 0.2s ease;
 
   &:hover {
     cursor: pointer;
-    transform: color 0.2s ease;
+    -webkit-transform: color 0.2s ease;
+        -ms-transform: color 0.2s ease;
+            transform: color 0.2s ease;
     color: $blue;
   }
 }
@@ -260,7 +304,9 @@ p {
   background: $black; /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(top,$black,rgba(255, 255, 255,0), $black);
   background: -o-linear-gradient(bottom,$black,rgba(255, 255, 255,0), $black);
-  background: -moz-linear-gradient(bottom,$black,rgba(255, 255, 255,0), $black);
+  background: -webkit-gradient(linear, left top, left bottom, from($black), color-stop(rgba(255, 255, 255,0)), to($black));
+  background: -webkit-linear-gradient(top, $black, rgba(255, 255, 255,0), $black);
+  background: -o-linear-gradient(top, $black, rgba(255, 255, 255,0), $black);
   background: linear-gradient(to bottom, $black, rgba(255, 255, 255,0), $black);
 }
 
@@ -290,9 +336,16 @@ p {
 .parallax  {
   min-height: 100vh;
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   overflow: hidden;  
   z-index: 2;
   position: relative;
@@ -313,9 +366,16 @@ p {
   width: 75%;
   margin: 0 auto;
   padding: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 
   p {
     color: $white;
@@ -333,12 +393,20 @@ p {
   width: 100%;
   height: 100%;
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   left: 0;
   top: 0;
-  transform: scale(1.7);
+  -webkit-transform: scale(1.7);
+      -ms-transform: scale(1.7);
+          transform: scale(1.7);
 
   audio {
     display: none;
@@ -348,15 +416,29 @@ p {
     width: 100%;
     height: 100%;
     background: $color-1;
-    animation: curtain-pulse 19.2s ease infinite alternate;
+    -webkit-animation: curtain-pulse 19.2s ease infinite alternate;
+            animation: curtain-pulse 19.2s ease infinite alternate;
   } 
 }
 
 @mixin radial-gradient($color) {
   background: -webkit-radial-gradient(transparent 0%, $color 70%); 
   background: -o-radial-gradient(transparent 0%, $color 70%); 
-  background: -moz-radial-gradient(transparent 0%, $color 70%); 
   background: radial-gradient(transparent 0%, $color 70%); 
+}
+
+@-webkit-keyframes curtain-pulse {
+  0% {opacity: 0; @include radial-gradient($color-1)}
+  10% {opacity: 0.95; @include radial-gradient($color-1)}
+  20% {opacity: 0; @include radial-gradient($color-2)}
+  30% {opacity: 0.95; @include radial-gradient($color-2)}
+  40% {opacity: 0; @include radial-gradient($color-3)}
+  50% {opacity: 0.95; @include radial-gradient($color-3)}
+  60% {opacity: 0; @include radial-gradient($color-4)}
+  70% {opacity: 0.95; @include radial-gradient($color-4)}
+  80% {opacity: 0; @include radial-gradient($color-5)}
+  90% {opacity: 0.95; @include radial-gradient($color-5)}
+  100% {opacity: 0; @include radial-gradient($white)}
 }
 
 @keyframes curtain-pulse {
@@ -384,6 +466,8 @@ p {
   padding: 0 0 3rem 0;
   
     p {
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
       width: fit-content;
       padding: 1rem 3rem;
       font-weight: 600;
@@ -415,6 +499,8 @@ p {
 
 .hero__content {
   p {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     min-width: 60%;
     padding: 1rem 2rem;
@@ -434,17 +520,29 @@ p {
 
 .hero__outlink {
   font-size: 0.9rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 200px;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 3rem 0 0 0;
   
   div {
     padding: 2rem 0;
-    animation: outlink-vertical 1s ease 0s infinite;
+    -webkit-animation: outlink-vertical 1s ease 0s infinite;
+            animation: outlink-vertical 1s ease 0s infinite;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: left;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
 
     svg {
       color: $white;
@@ -483,9 +581,16 @@ p {
   width: 75%;
   margin: 0 auto;
   padding: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   position: relative;
 
   p {
@@ -517,9 +622,13 @@ p {
 
 .section__outlink {
   font-size: 0.9rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 200px;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 3rem 0 0 0;
 
   &:hover {
@@ -531,7 +640,8 @@ p {
     }
     
     div {
-      animation: outlink 1s ease 0s infinite;
+      -webkit-animation: outlink 1s ease 0s infinite;
+              animation: outlink 1s ease 0s infinite;
     }
   }
 
@@ -587,11 +697,15 @@ p {
   margin: 0 auto;
   padding: 3rem;
   display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
   -ms-flex-pack: justify;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
 
   p {
     text-align: left;
@@ -617,9 +731,13 @@ p {
 
 .develop__outlink {
   font-size: 0.9rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 200px;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 3rem 0 0 0;
 
   &:hover {
@@ -631,7 +749,8 @@ p {
     }
     
     div {
-      animation: outlink 1s ease 0s infinite;
+      -webkit-animation: outlink 1s ease 0s infinite;
+              animation: outlink 1s ease 0s infinite;
     }
   }
 
@@ -662,9 +781,16 @@ p {
 .project {
   width: 50%;
   height: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 1rem;
   position: relative;
   cursor: pointer;
@@ -681,6 +807,8 @@ p {
   &:hover {
 
     div {
+      -webkit-transition: width 0.5s ease-in;
+      -o-transition: width 0.5s ease-in;
       transition: width 0.5s ease-in;
       width: 100%;
     }
@@ -691,11 +819,20 @@ p {
   width: 0;
   background-color: $white;
   height: 4rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   position: absolute;
   left: -1rem;
+  -webkit-transition: width 0.5s ease-in;
+  -o-transition: width 0.5s ease-in;
   transition: width 0.5s ease-in;
 
   p {
@@ -717,11 +854,15 @@ p {
   margin: 0 auto;
   padding: 3rem;
   display: -ms-flexbox;
+  display: -webkit-box;
   display: flex;
   -ms-flex-direction: column;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
   -ms-flex-pack: justify;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
 
   p {
     text-align: left;
@@ -747,9 +888,13 @@ p {
 
 .music__outlink {
   font-size: 0.9rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 200px;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 3rem 0 0 0;
 
   @include tablet {
@@ -773,7 +918,8 @@ p {
     }
     
     div {
-      animation: outlink 1s ease 0s infinite;
+      -webkit-animation: outlink 1s ease 0s infinite;
+              animation: outlink 1s ease 0s infinite;
     }
   }
 }
@@ -802,14 +948,23 @@ p {
 .song__container {
   width: 200px;
   height: 200px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 1rem;
   border-radius: 200px;
-  filter: grayscale(1);
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
   border: 1px solid white;
   opacity: 0.9;
+  -webkit-transition: opacity 0.25s ease;
+  -o-transition: opacity 0.25s ease;
   transition: opacity 0.25s ease;
   background-color: bisque;
 
@@ -824,9 +979,12 @@ p {
   &:hover,
   &.isPlaying {
     cursor: pointer;
+    -webkit-transition: opacity 0.25s ease;
+    -o-transition: opacity 0.25s ease;
     transition: opacity 0.25s ease;
     opacity: 1;
-    filter: saturate(1.05);
+    -webkit-filter: saturate(1.05);
+            filter: saturate(1.05);
 
     &.song_1 {
       background: $gradient-song_1;
@@ -845,6 +1003,8 @@ p {
     }
 
     p {
+      -webkit-transition: all 0.15s ease;
+      -o-transition: all 0.15s ease;
       transition: all 0.15s ease;
       color: white;
       font-size: 1rem;
@@ -852,6 +1012,8 @@ p {
   }
 
   p {
+    -webkit-transition: all 0.15s ease;
+    -o-transition: all 0.15s ease;
     transition: all 0.15s ease;
     color: $black;
     font-size: 0rem;
@@ -867,9 +1029,16 @@ p {
   width: 75%;
   margin: 0 auto;
   padding: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 
   p {
     text-align: left;
@@ -894,17 +1063,30 @@ p {
 }
 
 .letswork__message-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transform: opacity 0.5s ease;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: opacity 0.5s ease;
+      -ms-transform: opacity 0.5s ease;
+          transform: opacity 0.5s ease;
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
 
   &.hide {
-    transform: opacity 0.5s ease;
+    -webkit-transform: opacity 0.5s ease;
+        -ms-transform: opacity 0.5s ease;
+            transform: opacity 0.5s ease;
     opacity: 0;
   }
 
@@ -931,6 +1113,21 @@ p {
       border: $blue;
     }
 
+    &::-webkit-input-placeholder {
+      color: $white;
+      opacity: 0.5;
+    }
+
+    &:-ms-input-placeholder {
+      color: $white;
+      opacity: 0.5;
+    }
+
+    &::-ms-input-placeholder {
+      color: $white;
+      opacity: 0.5;
+    }
+
     &::placeholder {
       color: $white;
       opacity: 0.5;
@@ -949,10 +1146,14 @@ p {
     text-transform: uppercase;
     cursor: pointer;
     font-weight: bolder;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
     color: $white;
 
     &:hover {
+      -webkit-transition: all 0.2s ease;
+      -o-transition: all 0.2s ease;
       transition: all 0.2s ease;
       border: 2px solid $black;
       background-color: $black;
@@ -967,9 +1168,13 @@ textarea {
 
 .letswork__outlink {
   font-size: 0.9rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 200px;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 3rem 0 0 0;
 
   &:hover {
@@ -981,7 +1186,8 @@ textarea {
     }
     
     div {
-      animation: outlink 1s ease 0s infinite;
+      -webkit-animation: outlink 1s ease 0s infinite;
+              animation: outlink 1s ease 0s infinite;
     }
   }
 
@@ -1011,9 +1217,15 @@ textarea {
 }
 
 .parallax {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .parallax__container {
@@ -1021,7 +1233,8 @@ textarea {
   height: 100%;
   display: block;
   opacity: 0.4;
-  filter: blur(0.4px) grayscale(1);;
+  -webkit-filter: blur(0.4px) grayscale(1);
+          filter: blur(0.4px) grayscale(1);;
 }
 
 .parallax__header {
@@ -1034,39 +1247,87 @@ textarea {
   letter-spacing: 8px;
   font-weight: $font_2;
   opacity: 0;
-  transform: translateY(50px);
+  -webkit-transform: translateY(50px);
+      -ms-transform: translateY(50px);
+          transform: translateY(50px);
   letter-spacing: 50px;
+  -webkit-transition: opacity 0.25s ease, -webkit-transform 1s ease;
+  transition: opacity 0.25s ease, -webkit-transform 1s ease;
+  -o-transition: opacity 0.25s ease, transform 1s ease;
   transition: opacity 0.25s ease, transform 1s ease;
+  transition: opacity 0.25s ease, transform 1s ease, -webkit-transform 1s ease;
 
   &.animate {
     letter-spacing: 5px;
     opacity: 1;
-    transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+            transform: translateY(0px);
+    -webkit-transition: opacity 0.25s ease, -webkit-transform 1s ease;
+    transition: opacity 0.25s ease, -webkit-transform 1s ease;
+    -o-transition: opacity 0.25s ease, transform 1s ease;
     transition: opacity 0.25s ease, transform 1s ease;
+    transition: opacity 0.25s ease, transform 1s ease, -webkit-transform 1s ease;
+  }
+}
+
+@-webkit-keyframes outlink {
+  0%   {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px)
+  }
+  50%  {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%)
+  }
+  100% {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px)
   }
 }
 
 @keyframes outlink {
   0%   {
-    transform: translateX(0px)
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px)
   }
   50%  {
-    transform: translateX(100%)
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%)
   }
   100% {
-    transform: translateX(0px)
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px)
+  }
+}
+
+@-webkit-keyframes outlink-vertical {
+  0%   {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px)
+  }
+  50%  {
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%)
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px)
   }
 }
 
 @keyframes outlink-vertical {
   0%   {
-    transform: translateY(0px)
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px)
   }
   50%  {
-    transform: translateY(10%)
+    -webkit-transform: translateY(10%);
+            transform: translateY(10%)
   }
   100% {
-    transform: translateY(0px)
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px)
   }
 }
 
