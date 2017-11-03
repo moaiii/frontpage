@@ -17,27 +17,26 @@ class Develop extends Component {
             <p>Developer</p>
           </div>
           <div className="develop__blurb">
-            <p>I work at ambie.fm - a music tech start up where I build a lot of new features including IoT media players.</p>
-            <p>I love Javascript and from cloud servers right through to rich reactJS front ends, I build everything with it.</p>
-            <p>Below are some examples of my work.</p>
+            <p>From designs to the server - I get stuck into all of it.</p>
+            <p>Javascript, React, Node, SASS and AWS are my tools of choice.</p>
           </div>
           <div className="develop__projects">
             <div className="project"
-                 onClick={() => this._handleOutlink("http://ambie.fm")}>
+                 onClick={() => this._handleOutlink("http://frets2keys.com")}>
               <div className="project__background">
-                <p>ambie.fm</p>          
+                <p>frets2keys.com</p>          
               </div>
             </div>
             <div className="project"
-                 onClick={() => this._handleOutlink("http://github.com/moaiii")}>
+                 onClick={() => this._handleOutlink("http://undiscovered-japan.ft.com/")}>
               <div className="project__background">
-                <p>guitar.productions</p>          
+                <p>Nikkei</p>          
               </div>
             </div>
             <div className="project"
-                 onClick={() => this._handleOutlink("http://github.com/moaiii")}>
+                 onClick={() => this._handleOutlink("http://telecomsconnect.withgoogle.com")}>
               <div className="project__background">
-                <p>www.daw.guitar</p>          
+                <p>Google</p>          
               </div>
             </div>
           </div>

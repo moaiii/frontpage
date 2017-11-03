@@ -14,11 +14,11 @@ class Section extends Component {
       <div className="section">
         <div className="section__container">
           <div className="section__title">
-            <p>About Me</p>
+            <p>About</p>
           </div>
           <div className="section__content">
             <p>
-              Tumblr plaid copper mug letterpress lomo. Flannel craft beer everyday carry green juice selvage kitsch. Meditation fixie heirloom chambray tilde, gentrify squid pour-over affogato palo santo pitchfork adaptogen DIY meggings scenester. Mixtape affogato 90's, taxidermy helvetica snackwave subway tile waistcoat man braid celiac green juice beard.
+              I'm a web developer and music producer from Glasgow, Scotland currently residing in big 'ol London. 
             </p>
           </div>
           <div className="section__outlink" onClick={this._handleOutlink}>

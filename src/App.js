@@ -8,6 +8,7 @@ import Music from './modules/Music';
 import Hero from './modules/Hero';
 import LetsWork from './modules/LetsWork';
 import Parallax from './modules/Parallax';
+import rsScroller from 'react-smooth-scroller';
 var _ = require('lodash');
 
 
@@ -54,7 +55,7 @@ class App extends Component {
       percentageIn: (1 - (docTop_to_scrollTop / window.innerHeight)) / sectionInFull
     };
     
-    console.log(windowView.sectionInFull);
+    // console.log(windowView.sectionInFull);
     
     this.setState({
       percentIn: windowView.percentageIn,
@@ -134,18 +135,13 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App__container">
-          <Header 
-            isInView={this.state.section_0}
-            percentIn={this.state.percentIn}
-            percentOut={this.state.percentOut}
-          />
           <Hero 
             isInView={this.state.section_1}
             percentIn={this.state.percentIn}
             percentOut={this.state.percentOut}
           />
           <Parallax 
-            header={"Hey! Im chris.."} 
+            header={"Hello, I'm chris a.k.a moai"} 
             isInView={this.state.section_2}
             percentIn={this.state.percentIn}
             percentOut={this.state.percentOut}
@@ -156,7 +152,7 @@ class App extends Component {
             percentOut={this.state.percentOut}
           />
           <Parallax 
-            header={"I make web stuff.."} 
+            header={"I make web things"} 
             isInView={this.state.section_4}
             percentIn={this.state.percentIn}
             percentOut={this.state.percentOut}
@@ -167,7 +163,7 @@ class App extends Component {
             percentOut={this.state.percentOut}
           />
           <Parallax 
-            header={"..and write music"} 
+            header={"I write music bits"} 
             isInView={this.state.section_6}
             percentIn={this.state.percentIn}
             percentOut={this.state.percentOut}
@@ -178,7 +174,7 @@ class App extends Component {
             percentOut={this.state.percentOut}
           />
           <Parallax 
-            header={"contact me"} 
+            header={"Contact me"} 
             isInView={this.state.section_8}
             percentIn={this.state.percentIn}
             percentOut={this.state.percentOut}
@@ -202,3 +198,10 @@ class App extends Component {
 }
 
 export default App;
+
+
+  // <Header 
+  //   isInView={this.state.section_0}
+  //   percentIn={this.state.percentIn}
+  //   percentOut={this.state.percentOut}
+  // />

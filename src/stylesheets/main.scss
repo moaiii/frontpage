@@ -1,12 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Amatic+SC:400,700|Old+Standard+TT:400,400i,700');
-
+@import url('https://fonts.googleapis.com/css?family=Bitter|Amatic+SC:400,700|Playfair+Display:400,400i,700');
 
 $black: #161717;
 $light-black: #222222;
 $grey: #8B8B8B;
 $white: #f2f2f2;
 $blue: #3498db;
-
 $color-1: #FF00A7;
 $color-2: #00BCAB;
 $color-3: #FFC666;
@@ -15,15 +13,29 @@ $color-5: #870090;
 $color-6: #FFC666;
 
 $header-height: 70px;
+$mobile: 320px;
+$tablet: 768px;
 
-$font_1: 'Abril Fatface', cursive;;
+$font_1: 'Bitter', serif;
 $font_2: 'Amatic SC', cursive;
-$font_3: 'Old Standard TT', serif;
+$font_3: 'Playfair Display', serif;
 
 $gradient-song_1: linear-gradient(to right, #b3ffab, #12fff7);
 $gradient-song_2: linear-gradient(to right, #ffb347, #ffcc33);
 $gradient-song_3: linear-gradient(to right, #feac5e, #c779d0, #4bc0c8);
 $gradient-song_4: linear-gradient(to right, #fdfc47, #24fe41);
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $tablet) {
+    @content;
+  }
+}
 
 
 * {
@@ -137,6 +149,14 @@ p {
   height: 100%;
   position: fixed;
   z-index: 0;
+
+  @include tablet {
+    background-position: center;
+  }
+
+  &.--music {
+    background-position: left;
+  }
 }
 
 .footer-dummy {
@@ -161,15 +181,16 @@ p {
   width: 100%;
   top: 0;
   left: 0;
-  padding-bottom: 100px;
   z-index: -1;
 }
 
 .footer__social {
   width: 30%;
+  height: 10% !important;
   display: flex;
   justify-content: space-evenly;
   margin: 2rem auto;
+  width: 20rem !important;
 
   a {
     width: 1rem;
@@ -184,10 +205,21 @@ p {
         color: $white;
       }
     }
+
+    @include tablet {
+      width: 0.8rem;
+      height: 0.8rem;
+    }
+  }
+
+  @include tablet {
+    height: 100px !important;
+    padding: 0 2rem;
   }
 }
 
 .footer__copyright {
+  height: 10% !important;
   color: $grey;
   font-size: 0.8rem;
 }
@@ -289,6 +321,11 @@ p {
     color: $white;
     text-align: left;
   }
+
+  @include tablet {
+    width: 100%;
+    padding: 2rem;
+  }
 }
 
 .hero-video__container {
@@ -301,7 +338,7 @@ p {
   justify-content: center;
   left: 0;
   top: 0;
-  transform: scale(1.3);
+  transform: scale(1.7);
 
   audio {
     display: none;
@@ -311,24 +348,29 @@ p {
     width: 100%;
     height: 100%;
     background: $color-1;
-    // animation: curtain-pulse 19.2s cubic-bezier(0.420, 0.000, 1.000, 0.630) infinite alternate;
     animation: curtain-pulse 19.2s ease infinite alternate;
   } 
 }
 
-@keyframes curtain-pulse {
+@mixin radial-gradient($color) {
+  background: -webkit-radial-gradient(transparent 0%, $color 70%); 
+  background: -o-radial-gradient(transparent 0%, $color 70%); 
+  background: -moz-radial-gradient(transparent 0%, $color 70%); 
+  background: radial-gradient(transparent 0%, $color 70%); 
+}
 
-  0% {opacity: 0;background-color: $color-1}
-  10% {opacity: 0.95;background-color: $color-1}
-  20% {opacity: 0;background-color: $color-2}
-  30% {opacity: 0.95;background-color: $color-2}
-  40% {opacity: 0;background-color: $color-3}
-  50% {opacity: 0.95;background-color: $color-3}
-  60% {opacity: 0;background-color: $color-4}
-  70% {opacity: 0.95;background-color: $color-4}
-  80% {opacity: 0;background-color: $color-5}
-  90% {opacity: 0.95;background-color: $color-5}
-  100% {opacity: 0;background-color: $white}
+@keyframes curtain-pulse {
+  0% {opacity: 0; @include radial-gradient($color-1)}
+  10% {opacity: 0.95; @include radial-gradient($color-1)}
+  20% {opacity: 0; @include radial-gradient($color-2)}
+  30% {opacity: 0.95; @include radial-gradient($color-2)}
+  40% {opacity: 0; @include radial-gradient($color-3)}
+  50% {opacity: 0.95; @include radial-gradient($color-3)}
+  60% {opacity: 0; @include radial-gradient($color-4)}
+  70% {opacity: 0.95; @include radial-gradient($color-4)}
+  80% {opacity: 0; @include radial-gradient($color-5)}
+  90% {opacity: 0.95; @include radial-gradient($color-5)}
+  100% {opacity: 0; @include radial-gradient($white)}
 }
 
 .video__curtain {
@@ -353,6 +395,11 @@ p {
       background-color: white;
       position: relative;
       right: 35px;
+
+      @include tablet {
+        padding: 0.5rem 1.5rem;
+        font-size: 0.5rem;
+      }
     }
 }
 
@@ -374,6 +421,14 @@ p {
     line-height: 1;
     font-size: 3rem;
     background-color: $black;
+    
+    @include tablet {
+      font-size: 1.3rem;
+      width: 100%;
+      text-align: right;
+      position: relative;
+      left: 10vw;
+    }
   }
 }
 
@@ -395,10 +450,33 @@ p {
       color: $white;
     }
   }
+
+  @include tablet {
+    padding: 2rem 0 0 0;
+    width: 50%;
+    
+    p {
+      font-size: 0.8rem;
+    }
+
+    div:nth-of-type(1) { 
+      font-size: 0.6rem;
+      position: relative;
+      top: 4px;
+    }
+  }
 }
 
 .section {
-  background-color: $white;
+  background-color: $color-2;
+}
+
+.splurge {
+  width: 5rem;;
+  height: 5rem;
+  border-radius: 5rem;
+  border: 1px solid $white;
+  position: relative;
 }
 
 .section__container {
@@ -408,9 +486,19 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: relative;
 
   p {
     text-align: left;
+  }
+
+  &.splurge {
+    right: 0;
+    top: 0;
+  }
+
+  @include tablet {
+    width: 100%;
   }
 }
 
@@ -422,7 +510,7 @@ p {
     letter-spacing: 6px;
     font-size: 0.8rem;
     text-transform: uppercase;
-    color: $blue;
+    color: $white;
     font-weight: $font_1;
   }
 }
@@ -436,14 +524,29 @@ p {
 
   &:hover {
     cursor: pointer;
-    color: $blue;
+    color: $white;
 
     p {
-      color: $blue;
+      color: $white;
     }
     
     div {
       animation: outlink 1s ease 0s infinite;
+    }
+  }
+
+  @include tablet {
+    padding: 2rem 0 0 0;
+    width: 50%;
+    
+    p {
+      font-size: 0.8rem;
+    }
+
+    div:nth-of-type(1) { 
+      font-size: 0.6rem;
+      position: relative;
+      top: 4px;
     }
   }
 }
@@ -453,15 +556,30 @@ p {
 
   p {
     font-size: 1.5em;
+
+    @include tablet {
+      font-size: 1.3em;
+      width: 100%;
+    }
+  }
+
+  @include tablet {
+    width: 100%;
   }
 }
 
 .develop {
-  background-color: $blue;
+  background-color: $color-3;
 }
 
 .develop__blurb {
-  margin-bottom: 2rem;
+
+  p {
+    @include tablet {
+      font-size: 0.8rem;
+      margin-bottom: 1rem;
+    }
+  }
 }
 
 .develop__container {
@@ -477,6 +595,10 @@ p {
 
   p {
     text-align: left;
+  }
+
+  @include tablet {
+    width: 100%;
   }
 }
 
@@ -512,6 +634,21 @@ p {
       animation: outlink 1s ease 0s infinite;
     }
   }
+
+  @include tablet {
+    padding: 2rem 0 0 0;
+    width: 50%;
+    
+    p {
+      font-size: 0.8rem;
+    }
+
+    div:nth-of-type(1) { 
+      font-size: 0.6rem;
+      position: relative;
+      top: 4px;
+    }
+  }
 }
 
 .develop__content {
@@ -535,6 +672,10 @@ p {
   p {
     font-size: 2rem;
     padding-left: 1rem;
+
+    @include tablet {
+      font-size: 1.6rem;
+    }
   }
 
   &:hover {
@@ -556,13 +697,19 @@ p {
   position: absolute;
   left: -1rem;
   transition: width 0.5s ease-in;
+
+  p {
+    @include tablet {
+      font-size: 1.6rem;
+    }
+  }
 }
 
 
 
 .music {
 
-  background-color: $white;
+  background-color: $blue;
 }
 
 .music__container {
@@ -579,6 +726,10 @@ p {
   p {
     text-align: left;
   }
+
+  @include tablet {
+    width: 100%;
+  }
 }
 
 .music__title {
@@ -589,7 +740,7 @@ p {
     letter-spacing: 6px;
     font-size: 0.8rem;
     text-transform: uppercase;
-    color: $light-black;
+    color: $white;
     font-weight: $font_1;
   }
 }
@@ -601,12 +752,24 @@ p {
   justify-content: space-between;
   padding: 3rem 0 0 0;
 
+  @include tablet {
+    padding: 2rem 0 0 0;
+    width: 50%;
+    font-size: 0.6rem;
+    position: relative;
+    top: 4px;
+    
+    p {
+      font-size: 0.8rem;
+    }
+  }
+
   &:hover {
     cursor: pointer;
-    color: $blue;
+    color: $white;
 
     p {
-      $color: $blue;
+      color: $white;
     }
     
     div {
@@ -616,15 +779,19 @@ p {
 }
 
 .music__content {
-  width: 75%;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  margin: 0 auto;
   position: relative;  
 
-  p {
-    font-size: 1.5em;
+  .music__text {
+    margin-bottom: 1rem;
+    font-size: 1em;
+    
+    &:nth-of-type(2) {
+      margin-bottom: 2rem;
+    }
+  }
+
+  @include tablet {
+    font-size: 0.8rem;
   }
 }
 
@@ -693,7 +860,7 @@ p {
 }
 
 .letswork {
-  background-color: $white;
+  background-color: $color-1;
 }
 
 .letswork__container {
@@ -707,6 +874,10 @@ p {
   p {
     text-align: left;
   }
+
+  @include tablet {
+    width: 100%;
+  }
 }
 
 .letswork__title {
@@ -717,7 +888,7 @@ p {
     letter-spacing: 6px;
     font-size: 0.8rem;
     text-transform: uppercase;
-    color: $blue;
+    color: $white;
     font-weight: $font_1;
   }
 }
@@ -728,18 +899,24 @@ p {
   justify-content: center;
   align-items: center;
   transform: opacity 0.5s ease;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 
   &.hide {
     transform: opacity 0.5s ease;
     opacity: 0;
   }
 
-  input {
+  input, textarea {
     width: 100%;
     margin: 0 0 1rem 0;
     padding-left: 1rem;
-    border-radius: 3px;
-    border: 1px solid $grey;
+    border-radius: 1px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.7);
+    font-size: 1rem;
+    color: $white;
 
     &.input-name,
     &.input-email {
@@ -753,6 +930,14 @@ p {
     &:focus {
       border: $blue;
     }
+
+    &::placeholder {
+      color: $white;
+      opacity: 0.5;
+    }
+
+    &:focus {
+    }
   }
 
   button {
@@ -760,11 +945,12 @@ p {
     padding: 1rem 2rem;
     background-color: transparent;
     margin: 2rem 0 0 0;
-    border: 2px solid $black;
+    border: 2px solid $white;
     text-transform: uppercase;
     cursor: pointer;
     font-weight: bolder;
     transition: all 0.2s ease;
+    color: $white;
 
     &:hover {
       transition: all 0.2s ease;
@@ -773,6 +959,10 @@ p {
       color: white;
     }
   }
+}
+
+textarea {
+  padding: 1rem;
 }
 
 .letswork__outlink {
@@ -784,14 +974,29 @@ p {
 
   &:hover {
     cursor: pointer;
-    color: $blue;
+    color: $white;
 
     p {
-      color: $blue;
+      color: $white;
     }
     
     div {
       animation: outlink 1s ease 0s infinite;
+    }
+  }
+
+  @include tablet {
+    padding: 2rem 0 0 0;
+    width: 50%;
+    
+    p {
+      font-size: 0.8rem;
+    }
+
+    div:nth-of-type(1) { 
+      font-size: 0.6rem;
+      position: relative;
+      top: 4px;
     }
   }
 }
@@ -820,10 +1025,10 @@ p {
 }
 
 .parallax__header {
+  font-family: $font_1;
   font-size: 3rem;
   width: 100%;
   padding: 0 3rem;
-  text-transform: uppercase;
   color: $white;
   position: absolute;
   letter-spacing: 8px;

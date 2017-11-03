@@ -9,11 +9,7 @@ import FaYoutube from 'react-icons/lib/fa/youtube';
 import P5Wrapper from 'react-p5-wrapper';
 
 // p5
-import spectrum from '../js/spectrum';
-// <script src="javascripts/song.js"></script>
-// <script src="javascripts/preload.js"></script>
-// <script src="javascripts/setup.js"></script>
-// <script src="javascripts/sketch.js"></script>
+// import spectrum from '../js/spectrum';
 
 class Footer extends Component {
 
@@ -21,18 +17,22 @@ class Footer extends Component {
     super(props);
     
     this.state = {
-      sketch: spectrum
+      imgMod: ""
     };
   };
 
-  componentWillReceiveProps(nextProps) {};
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      imgMod: nextProps.img.includes("music") ? " --music" : " " 
+    });
+  };
 
   _handleSocialClick(type) {
     let url = "";
 
     switch(type) {
       case "twitter":
-        url = "https://twitter.com/moaimsc";
+        url = "https://twitter.com/___moaiii";
         break;
       case "soundcloud":
         url = "https://soundcloud.com/moai_music";
@@ -81,10 +81,6 @@ class Footer extends Component {
             <FaGithub />
           </a>
           <a href="javascript:;"
-            onClick={() => this._handleSocialClick("facebook")}>
-            <FaFacebook />
-          </a>
-          <a href="javascript:;"
             onClick={() => this._handleSocialClick("twitter")}>
             <FaTwitter />
           </a>
@@ -112,16 +108,17 @@ class Footer extends Component {
       null;
 
     return (
-      <div className="footer"
+      <div className={`footer ${this.state.imgMod}`}
            style={stickyImage}>
         {social}
         {curtain}
-        <P5Wrapper className="canvas__mandala" sketch={this.state.sketch}/>
       </div>
     );
+    }
   }
-}
-
-export default Footer;
-
-        
+  
+  export default Footer;
+  
+  
+  
+  // <P5Wrapper className="canvas__mandala" sketch={this.state.sketch}/>

@@ -6,7 +6,7 @@ class Hero extends Component {
   render() {
 
     let video_url = require(`../video/hero-video-short.mov`);
-    // let audio_url = require(`../audio/website-audio.mp3`);
+    let audio_url = require(`../audio/website-audio.mp3`);
 
     return (
       <div className="hero">
@@ -15,6 +15,7 @@ class Hero extends Component {
           <video width="auto" height="100%" autoPlay="true" loop>
             <source src={video_url} type="video/mp4" />
           </video>
+          <audio src={audio_url} autoPlay loop></audio>
         </div>
         <div className="hero__container">
           <div className="hero__title">

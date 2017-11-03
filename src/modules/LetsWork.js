@@ -49,17 +49,22 @@ class LetsWork extends Component {
     });
   }
 
+  _handleOutlink() {
+    let url = "https://www.linkedin.com/in/moaiii/";
+    window.open(url, '_blank').focus();
+  };
+
   render() {
 
     let formText = this.state.formIsVisible ? 
-      <p>If you have a project that you need taken care of then write me a message below or send an email and lets talk!</p> : 
+      <p></p> : 
       <p>Thank you for your message! I'll get back to you within 24 hours :)</p>
 
     return (
       <div className="letswork">
         <div className="letswork__container">
           <div className="letswork__title">
-            <p>Lets work together</p>
+            <p>Contact</p>
           </div>
           <div className="letswork__content">
             {formText}
@@ -73,7 +78,8 @@ class LetsWork extends Component {
                    placeholder="email" 
                    className="input-email"
                    onInput={this._handleInput.bind(this)}/>
-            <input type="text"
+            <textarea type="text"
+                   wrap="hard"
                    placeholder="message" 
                    className="input-message"
                    onInput={this._handleInput.bind(this)}/>
@@ -81,8 +87,8 @@ class LetsWork extends Component {
               Send
             </button>
           </div>
-          <div className="letswork__outlink" onClick={this._handleEmailClick}>
-            <p>I'd rather email</p>
+          <div className="letswork__outlink" onClick={this._handleOutlink}>
+            <p>Linkedin</p>
             <div>
               <FaChevronRight />
             </div>
