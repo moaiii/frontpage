@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import FaGithub from 'react-icons/lib/fa/github';
-import FaFacebook from 'react-icons/lib/fa/facebook';
+// import FaFacebook from 'react-icons/lib/fa/facebook';
 import FaTwitter from 'react-icons/lib/fa/twitter';
 import FaInstagram from 'react-icons/lib/fa/instagram';
 import FaSoundcloud from 'react-icons/lib/fa/soundcloud';

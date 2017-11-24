@@ -12,10 +12,9 @@ class Hero extends Component {
       <div className="hero">
         <div className="hero-video__container">
           <div className="curtain"></div>
-          <video playsinline 
+          <video playsInline 
                  width="auto" 
                  height="100%" 
-                 min-height="100%" 
                  autoPlay="true" 
                  loop
                  muted>

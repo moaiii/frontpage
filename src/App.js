@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 // import icon from './img/icon.png';
 import Footer from './modules/Footer';
-import Header from './modules/Header';
+// import Header from './modules/Header';
 import Section from './modules/Section';
 import Develop from './modules/Develop';
 import Music from './modules/Music';
 import Hero from './modules/Hero';
 import LetsWork from './modules/LetsWork';
 import Parallax from './modules/Parallax';
-import rsScroller from 'react-smooth-scroller';
+// import rsScroller from 'react-smooth-scroller';
 var _ = require('lodash');
 
 
@@ -32,19 +32,33 @@ class App extends Component {
       percentOut: 0,
       img: "moaiii-music"
     };
+
+    this._whatBrowser();
   }
 
   componentWillMount() {
     this._addScrollListener();
   };
 
+  _whatBrowser() {
+    let isFirefox = typeof InstallTrigger !== 'undefined';
+    let isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+    let isChrome = !!window.chrome && !!window.chrome.webstore;
+    
+    return isFirefox ? 'firefox' : isSafari ? 'safari' : 'chrome';
+  };
+
   _addScrollListener() {
-    var throttled = _.throttle(this._whatsInView.bind(this), 100, { 'trailing': false });
+    var throttled = _
+      .throttle(this._whatsInView.bind(this), 50, { 
+        'trailing': false 
+      });
+
     window.addEventListener('scroll', throttled);
   };
 
   _whatsInView() {
-    let docTop_to_scrollTop = document.documentElement.scrollTop;
+    let docTop_to_scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop || 0;
     let docTop_to_scrollBottom = docTop_to_scrollTop + window.innerHeight;
     let sectionInFull = Math.floor(docTop_to_scrollBottom / window.innerHeight);
     
@@ -55,7 +69,7 @@ class App extends Component {
       percentageIn: (1 - (docTop_to_scrollTop / window.innerHeight)) / sectionInFull
     };
     
-    // console.log(windowView.sectionInFull);
+    // console.log(docTop_to_scrollTop);
     
     this.setState({
       percentIn: windowView.percentageIn,
