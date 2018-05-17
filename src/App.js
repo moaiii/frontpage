@@ -155,7 +155,7 @@ class App extends Component {
             percentOut={this.state.percentOut}
           />
           <Parallax 
-            header={"Hello, I'm chris a.k.a moai"} 
+            header={"Chris || Moaiii"} 
             isInView={this.state.section_2}
             percentIn={this.state.percentIn}
             percentOut={this.state.percentOut}

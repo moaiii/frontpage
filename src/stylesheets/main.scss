@@ -744,7 +744,11 @@ p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 3rem 0 0 0;
+  padding: 1rem 0 0 0;
+  
+  &:nth-of-type(1) {
+    padding: 3rem 0 0 0;
+  }
 
   &:hover {
     cursor: pointer;
@@ -802,6 +806,7 @@ p {
   cursor: pointer;
 
   p {
+    z-index: 2;
     font-size: 2rem;
     padding-left: 1rem;
 
@@ -824,10 +829,11 @@ p {
 .project__background {
   width: 0;
   background-color: $white;
-  height: 4rem;
+  height: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  transform: translateY(1rem);
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -837,9 +843,9 @@ p {
           justify-content: center;
   position: absolute;
   left: -1rem;
-  -webkit-transition: width 0.5s ease-in;
-  -o-transition: width 0.5s ease-in;
-  transition: width 0.5s ease-in;
+  -webkit-transition: width 0.25s ease-out;
+  -o-transition: width 0.25s ease-out;
+  transition: width 0.25s ease-out;
 
   p {
     @include tablet {

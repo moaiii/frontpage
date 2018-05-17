@@ -17,32 +17,45 @@ class Develop extends Component {
             <p>Developer</p>
           </div>
           <div className="develop__blurb">
-            <p>From designs to the server - I get stuck into all of it.</p>
-            <p>Javascript, React, Node, SASS and AWS are my tools of choice.</p>
+            <p>I work all over the stack, from UI to Dev ops.</p>
+            <p>Javascript, React, Redux, Node, SASS and AWS are my tools of choice.</p>
           </div>
           <div className="develop__projects">
             <div className="project"
-                 onClick={() => this._handleOutlink("http://frets2keys.com")}>
+                 onClick={() => this._handleOutlink("https://goo.gl/5k6ij8")}>
+              <p>Frets 2 Keys</p>    
               <div className="project__background">
-                <p>frets2keys.com</p>          
+              </div>
+            </div>
+            <div className="project"
+                 onClick={() => this._handleOutlink("https://goo.gl/JgoE4p")}>
+              <p>Go Compare</p>
+              <div className="project__background">
               </div>
             </div>
             <div className="project"
                  onClick={() => this._handleOutlink("http://undiscovered-japan.ft.com/")}>
+              <p>Nikkei</p>          
               <div className="project__background">
-                <p>Nikkei</p>          
               </div>
             </div>
             <div className="project"
                  onClick={() => this._handleOutlink("http://telecomsconnect.withgoogle.com")}>
+              <p>Google</p>          
               <div className="project__background">
-                <p>Google</p>          
               </div>
             </div>
           </div>
           <div className="develop__outlink" 
-               onClick={() => this._handleOutlink("http://github.com/moaiii")}>
+               onClick={() => this._handleOutlink("https://goo.gl/G6nwkT")}>
             <p>Github</p>
+            <div>
+              <FaChevronRight />
+            </div>
+          </div>
+          <div className="develop__outlink" 
+               onClick={() => this._handleOutlink("https://goo.gl/syU6AW")}>
+            <p>CV</p>
             <div>
               <FaChevronRight />
             </div>

@@ -56,14 +56,20 @@ class Music extends Component {
             </p>
             <div className="project"
                  onClick={() => this._handleOutlink("http://soundcloud.com/moai_music")}>
+              <p>Music</p>          
               <div className="project__background">
-                <p>Music</p>          
+              </div>
+            </div>
+            <div className="project"
+                 onClick={() => this._handleOutlink("https://goo.gl/2vZ26i")}>
+              <p>Spectral art</p>          
+              <div className="project__background">
               </div>
             </div>
             <div className="project"
                  onClick={() => this._handleOutlink("https://www.youtube.com/watch?v=kGuu_3fn_B0")}>
+              <p>Video</p>          
               <div className="project__background">
-                <p>Video</p>          
               </div>
             </div>
           </div>
